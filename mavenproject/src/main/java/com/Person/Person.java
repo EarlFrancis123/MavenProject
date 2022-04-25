@@ -1,8 +1,5 @@
+
 package com.Person;
-
-import java.util.Scanner;
-
-import javax.naming.spi.DirObjectFactory;
 
 import com.Vehicle.Vehicle;
 
@@ -30,6 +27,13 @@ public class Person {
         this.location =location;
         this.travelVehicle=travelVehicle;
     }
+    
+    public Person(String firstName, String lastName, int age){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+      
+    }
 
     
         public double getTravelDistance() {
@@ -54,6 +58,7 @@ public void setTravelDistance(double travelDistance) {
         this.travelVehicle = travelVehicle;
     }
 
+  
 
  
 }

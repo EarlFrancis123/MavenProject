@@ -1,0 +1,4 @@
+# Created at 2022-04-25T19:41:04.464
+Boot Manifest-JAR contains absolute paths in classpath 'e:\NexSeed Projects\mavenproject\mavenproject\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+

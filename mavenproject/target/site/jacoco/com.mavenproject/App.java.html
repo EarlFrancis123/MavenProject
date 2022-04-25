@@ -5,6 +5,7 @@ import java.util.Scanner;
 import com.Person.*;
 
 import com.Vehicle.*;
+
 /**
  * Hello world!
  */
@@ -19,31 +20,70 @@ public final class App {
 
     public static void main(String[] args) {
         int option;
-<span class="nc" id="L22">        int age1 = 23;</span>
-<span class="nc" id="L23">        int age2 = 30;</span>
-<span class="nc" id="L24">        int nowheels1 = 2;</span>
-<span class="nc" id="L25">        int nowheels2 = 4;</span>
-<span class="nc" id="L26">        Scanner inputsc = new Scanner(System.in);</span>
-<span class="nc" id="L27">        Student person1 = new Student(&quot;Earl Francis &quot;, &quot;Tajanlangit &quot;, age1, &quot;4th Year&quot;);</span>
-<span class="nc" id="L28">        Teacher person2 = new Teacher(&quot; Moma &quot;, &quot;Ortega&quot;, age2, &quot;Master Degree&quot;);</span>
-<span class="nc" id="L29">        Bike vehicle1 = new Bike(nowheels1, &quot; No Engine&quot;, &quot;15&quot;);</span>
-<span class="nc" id="L30">        Car vehicle2 = new Car(nowheels2, &quot; 1200 horsepower &quot;, &quot;20&quot;);</span>
+        double gasConsumption,travelDistance;
+<span class="nc" id="L24">        Scanner inputsc = new Scanner(System.in);</span>
+
+<span class="nc" id="L26">        Student person1 = new Student(&quot;Earl&quot;, &quot;Tajanlangit&quot;, 18, &quot;4th year&quot;);</span>
+<span class="nc" id="L27">        Teacher person2 = new Teacher(&quot;Moma&quot;, &quot;Ortega&quot;, 36, &quot;Masters Degree&quot;);</span>
+<span class="nc" id="L28">        Bike vehicle1 = new Bike(2, &quot;no engine&quot;, 30, &quot;&quot;, &quot;125&quot;);</span>
+<span class="nc" id="L29">        Car vehicle2 = new Car(4, &quot;1200 horsepower&quot;, 20, &quot;&quot;, &quot;125&quot;);</span>
+
+<span class="nc" id="L31">        Person person = new Person(&quot;Earl &quot;, &quot;Tajanlangit&quot;, 30, &quot;Cebu&quot;, &quot;&quot;);</span>
+        
         do{
-<span class="nc" id="L32">            System.out.println(&quot;___________________________________________________________________________________&quot;);</span>
-<span class="nc" id="L33">            System.out.println(&quot;Press [1] to View all Person&quot;);</span>
-<span class="nc" id="L34">            System.out.println(&quot;Press [2] to View all Vehicle&quot;);</span>
-<span class="nc" id="L35">            System.out.println(&quot;Press [0] to END&quot;);</span>
-<span class="nc" id="L36">            System.out.println(&quot;___________________________________________________________________________________&quot;);</span>
-<span class="nc" id="L37">            option=inputsc.nextInt();</span>
-<span class="nc bnc" id="L38" title="All 2 branches missed.">            inputsc.nextLine();if(option==1){System.out.println(&quot;ALL PERSON&quot;);</span>
-<span class="nc" id="L39">                System.out.println(&quot;name: &quot; + person1.firstName + person1.lastName + &quot; Age: &quot; + person1.age + &quot;YearLVL: &quot; + person1.year);</span>
-<span class="nc" id="L40">                System.out.println(&quot;name: &quot; + person2.firstName + person2.lastName + &quot; Age: &quot; + person2.age + &quot;DegreeLVL: &quot; + person2.degreeLVL);</span>
-<span class="nc bnc" id="L41" title="All 2 branches missed.">            }else if(option==2){System.out.println(&quot;ALL Vehicle&quot;);</span>
-<span class="nc" id="L42">                System.out.println(&quot;No.Wheels: &quot; + vehicle1.numberOfWheels + vehicle1.engine + &quot;WheeliePower: &quot; + vehicle1.wheeliePower);</span>
-<span class="nc" id="L43">                System.out.println(&quot;No.Wheels: &quot; + vehicle2.numberOfWheels + vehicle2.engine + &quot;StorageCapacity: &quot; + vehicle2.storageCapacity);}</span>
-<span class="nc bnc" id="L44" title="All 2 branches missed.">        }while(option!= 0);</span>
-<span class="nc" id="L45">        System.out.println(&quot;Program End Thank you!!&quot;);</span>
-<span class="nc" id="L46">        inputsc.close();}</span>
+<span class="nc" id="L34">            System.out.println(&quot;Name: &quot; + person.firstName +person.lastName + &quot; Is Currently at &quot;+ person.getLocation());</span>
+<span class="nc" id="L35">            System.out.println(&quot;___________________________________________________________________________________&quot;);</span>
+<span class="nc" id="L36">            System.out.println(&quot;Press [1] to Travel with Car&quot;);</span>
+<span class="nc" id="L37">            System.out.println(&quot;Press [2] to Travel with Motorcyle&quot;);</span>
+<span class="nc" id="L38">            System.out.println(&quot;Press [0] to END&quot;);</span>
+<span class="nc" id="L39">            System.out.println(&quot;___________________________________________________________________________________&quot;);</span>
+<span class="nc" id="L40">            option=inputsc.nextInt();</span>
+<span class="nc" id="L41">            inputsc.nextLine();</span>
+
+<span class="nc bnc" id="L43" title="All 2 branches missed.">            if(option==1){</span>
+               
+<span class="nc" id="L45">                System.out.println(&quot;Please input Car name&quot;);</span>
+<span class="nc" id="L46">                person.setTravelVehicle(inputsc.nextLine());</span>
+<span class="nc" id="L47">                System.out.println(&quot;Please input Travel Location&quot;);</span>
+<span class="nc" id="L48">                person.setLocation(inputsc.nextLine());</span>
+<span class="nc" id="L49">                System.out.println(&quot;Please input Travel Distances&quot;);</span>
+<span class="nc" id="L50">                travelDistance = inputsc.nextDouble();</span>
+<span class="nc" id="L51">                gasConsumption = travelDistance/15.5;</span>
+<span class="nc bnc" id="L52" title="All 2 branches missed.">                if(gasConsumption &gt; vehicle1.gas){</span>
+<span class="nc" id="L53">                    System.out.println(&quot;YOU DONT HAVE ENOUGH GAS&quot;);</span>
+<span class="nc" id="L54">                }</span>
+                else{
+<span class="nc" id="L56">                vehicle1.setGas(vehicle1.getGas() - gasConsumption );</span>
+<span class="nc" id="L57">                System.out.println(&quot;Name: &quot; + person.firstName +person.lastName + &quot; traveled to: &quot;+ person.getLocation() + &quot; Using: &quot; +person.getTravelVehicle() + &quot; Current Gass Available: &quot; + vehicle1.gas);</span>
+                }
+
+
+<span class="nc bnc" id="L61" title="All 2 branches missed.">            }else if(option==2){</span>
+               
+<span class="nc" id="L63">                System.out.println(&quot;Please input Motorcyle name&quot;);</span>
+<span class="nc" id="L64">                person.setTravelVehicle(inputsc.nextLine());</span>
+<span class="nc" id="L65">                System.out.println(&quot;Please input Travel Location&quot;);</span>
+<span class="nc" id="L66">                person.setLocation(inputsc.nextLine());</span>
+<span class="nc" id="L67">                System.out.println(&quot;Please input Travel Distances&quot;);</span>
+<span class="nc" id="L68">                travelDistance = inputsc.nextDouble();</span>
+<span class="nc" id="L69">               gasConsumption = travelDistance/15.5;</span>
+<span class="nc bnc" id="L70" title="All 2 branches missed.">               if(gasConsumption &gt; vehicle2.gas){</span>
+<span class="nc" id="L71">                System.out.println(&quot;YOU DONT HAVE ENOUGH GAS&quot;);</span>
+<span class="nc" id="L72">              }</span>
+              else{
+<span class="nc" id="L74">                vehicle2.setGas(vehicle2.getGas() - gasConsumption );</span>
+<span class="nc" id="L75">                System.out.println(&quot;Name: &quot; + person.firstName +person.lastName + &quot; traveled to: &quot;+ person.getLocation() + &quot; Using: &quot; +person.getTravelVehicle() + &quot; Current Gass Available: &quot; + vehicle2.gas);</span>
+                 }
+<span class="nc" id="L77">        }</span>
+            else {
+<span class="nc" id="L79">                System.out.println(&quot;Invalid input please input again!!&quot;);</span>
+
+            }
+<span class="nc bnc" id="L82" title="All 2 branches missed.">        }while(option!= 0);</span>
+<span class="nc" id="L83">        System.out.println(&quot;Program End Thank you!!&quot;);</span>
+<span class="nc" id="L84">        inputsc.close();</span>
+    
+<span class="nc" id="L86">    }</span>
   
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

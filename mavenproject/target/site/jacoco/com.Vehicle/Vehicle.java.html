@@ -8,10 +8,31 @@ public class Vehicle {
  */
     public int numberOfWheels;
     public String engine;
-  String Location;
-<span class="nc" id="L12">      public Vehicle(int numberOfWheels, String engine){</span>
-<span class="nc" id="L13">          this.numberOfWheels = numberOfWheels;</span>
-<span class="nc" id="L14">          this.engine = engine;</span>
-<span class="nc" id="L15">      }</span>
+    public double gas;
+    public double gasConsumption;
+    public String vehiclename;
+
+<span class="nc" id="L15">      public Vehicle(int numberOfWheels, String engine){</span>
+<span class="nc" id="L16">          this.numberOfWheels = numberOfWheels;</span>
+<span class="nc" id="L17">          this.engine = engine;</span>
+<span class="nc" id="L18">      }</span>
+
+      
+<span class="nc" id="L21">      public Vehicle(int numberOfWheels, String engine, double gas, String vehiclename){</span>
+<span class="nc" id="L22">        this.numberOfWheels = numberOfWheels;</span>
+<span class="nc" id="L23">        this.engine = engine;</span>
+<span class="nc" id="L24">        this.gas = gas;</span>
+<span class="nc" id="L25">        this.vehiclename=vehiclename;</span>
+<span class="nc" id="L26">    }</span>
+<span class="nc" id="L27">    public Vehicle(double gas){</span>
+<span class="nc" id="L28">        this.gas = gas;</span>
+<span class="nc" id="L29">    }</span>
+    public double getGas() {
+<span class="nc" id="L31">        return gas;</span>
+    }
+    public void setGas(double gas) {
+<span class="nc" id="L34">        this.gas = gas;</span>
+<span class="nc" id="L35">    }</span>
+    
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
