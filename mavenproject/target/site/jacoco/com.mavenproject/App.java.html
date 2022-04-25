@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>App.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">mavenproject</a> &gt; <a href="index.source.html" class="el_package">com.mavenproject</a> &gt; <span class="el_source">App.java</span></div><h1>App.java</h1><pre class="source lang-java linenums">package com.mavenproject;
+
+import java.util.Scanner;
+
+import com.Person.*;
+
+import com.Vehicle.*;
+/**
+ * Hello world!
+ */
+
+public final class App {
+    private App() {
+    }
+    /**
+     * Says hello to the world.
+     * @param args The arguments of the program.
+     */
+
+    public static void main(String[] args) {
+        int option;
+<span class="nc" id="L22">        int age1 = 23;</span>
+<span class="nc" id="L23">        int age2 = 30;</span>
+<span class="nc" id="L24">        int nowheels1 = 2;</span>
+<span class="nc" id="L25">        int nowheels2 = 4;</span>
+<span class="nc" id="L26">        Scanner inputsc = new Scanner(System.in);</span>
+<span class="nc" id="L27">        Student person1 = new Student(&quot;Earl Francis &quot;, &quot;Tajanlangit &quot;, age1, &quot;4th Year&quot;);</span>
+<span class="nc" id="L28">        Teacher person2 = new Teacher(&quot; Moma &quot;, &quot;Ortega&quot;, age2, &quot;Master Degree&quot;);</span>
+<span class="nc" id="L29">        Bike vehicle1 = new Bike(nowheels1, &quot; No Engine&quot;, &quot;15&quot;);</span>
+<span class="nc" id="L30">        Car vehicle2 = new Car(nowheels2, &quot; 1200 horsepower &quot;, &quot;20&quot;);</span>
+        do{
+<span class="nc" id="L32">            System.out.println(&quot;___________________________________________________________________________________&quot;);</span>
+<span class="nc" id="L33">            System.out.println(&quot;Press [1] to View all Person&quot;);</span>
+<span class="nc" id="L34">            System.out.println(&quot;Press [2] to View all Vehicle&quot;);</span>
+<span class="nc" id="L35">            System.out.println(&quot;Press [0] to END&quot;);</span>
+<span class="nc" id="L36">            System.out.println(&quot;___________________________________________________________________________________&quot;);</span>
+<span class="nc" id="L37">            option=inputsc.nextInt();</span>
+<span class="nc bnc" id="L38" title="All 2 branches missed.">            inputsc.nextLine();if(option==1){System.out.println(&quot;ALL PERSON&quot;);</span>
+<span class="nc" id="L39">                System.out.println(&quot;name: &quot; + person1.firstName + person1.lastName + &quot; Age: &quot; + person1.age + &quot;YearLVL: &quot; + person1.year);</span>
+<span class="nc" id="L40">                System.out.println(&quot;name: &quot; + person2.firstName + person2.lastName + &quot; Age: &quot; + person2.age + &quot;DegreeLVL: &quot; + person2.degreeLVL);</span>
+<span class="nc bnc" id="L41" title="All 2 branches missed.">            }else if(option==2){System.out.println(&quot;ALL Vehicle&quot;);</span>
+<span class="nc" id="L42">                System.out.println(&quot;No.Wheels: &quot; + vehicle1.numberOfWheels + vehicle1.engine + &quot;WheeliePower: &quot; + vehicle1.wheeliePower);</span>
+<span class="nc" id="L43">                System.out.println(&quot;No.Wheels: &quot; + vehicle2.numberOfWheels + vehicle2.engine + &quot;StorageCapacity: &quot; + vehicle2.storageCapacity);}</span>
+<span class="nc bnc" id="L44" title="All 2 branches missed.">        }while(option!= 0);</span>
+<span class="nc" id="L45">        System.out.println(&quot;Program End Thank you!!&quot;);</span>
+<span class="nc" id="L46">        inputsc.close();}</span>
+  
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
