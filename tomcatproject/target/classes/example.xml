@@ -25,6 +25,7 @@
         </action>
         <action name = "About" class = "tomcat.example.About">
         <result>/WEB-INF/example/About.jsp</result>
+        <result name="Regular">/WEB-INF/example/Regular.jsp</result>
         </action>
         <action name = "OurServices" class = "tomcat.example.OurServices">
         <result>/WEB-INF/example/OurServices.jsp</result>
