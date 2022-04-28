@@ -1,6 +1,8 @@
 
 package com.Person;
 
+import java.util.Scanner;
+
 import com.Vehicle.Vehicle;
 
 /**
@@ -19,6 +21,8 @@ public class Person {
  /**
  * Comment!
  */
+Scanner inputsc = new Scanner(System.in);
+
 
     public Person(String firstName, String lastName, int age, String location, String travelVehicle ){
         this.firstName = firstName;
@@ -27,7 +31,7 @@ public class Person {
         this.location =location;
         this.travelVehicle=travelVehicle;
     }
-    
+
     public Person(String firstName, String lastName, int age){
         this.firstName = firstName;
         this.lastName = lastName;
@@ -57,8 +61,18 @@ public void setTravelDistance(double travelDistance) {
     public void setTravelVehicle(String travelVehicle) {
         this.travelVehicle = travelVehicle;
     }
+    
 
-  
+    public void Travel(){
+                inputsc.nextLine(); 
+                System.out.println("Please input Car name");
+                travelVehicle = inputsc.nextLine();
+                System.out.println("Please input Travel Location");
+                location = inputsc.nextLine();
+                System.out.println("Please input Travel Distances");
+                travelDistance = inputsc.nextDouble();
+                
+    }
 
  
 }

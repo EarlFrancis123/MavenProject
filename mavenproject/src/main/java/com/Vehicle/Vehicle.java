@@ -17,7 +17,7 @@ public class Vehicle {
           this.engine = engine;
       }
 
-      
+
       public Vehicle(int numberOfWheels, String engine, double gas, String vehiclename){
         this.numberOfWheels = numberOfWheels;
         this.engine = engine;
@@ -30,8 +30,12 @@ public class Vehicle {
     public double getGas() {
         return gas;
     }
+    public Vehicle(){
+        
+    }
     public void setGas(double gas) {
         this.gas = gas;
     }
+
     
 }

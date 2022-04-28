@@ -20,13 +20,13 @@ public final class App {
 
     public static void main(String[] args) {
         int option;
-        double gasConsumption,travelDistance;
+        double gasConsumptions, Currentgas;
+        
         Scanner inputsc = new Scanner(System.in);
 
-        Student person1 = new Student("Earl", "Tajanlangit", 18, "4th year");
-        Teacher person2 = new Teacher("Moma", "Ortega", 36, "Masters Degree");
-        Bike vehicle1 = new Bike(2, "no engine", 30, "", "125");
-        Car vehicle2 = new Car(4, "1200 horsepower", 20, "", "125");
+
+        Bike vehicle1 = new Bike(2, "no engine", 2, "", "125");
+        Car vehicle2 = new Car(4, "1200 horsepower", 2, "", "125");
 
         Person person = new Person("Earl ", "Tajanlangit", 30, "Cebu", "");
         
@@ -41,40 +41,20 @@ public final class App {
             inputsc.nextLine();
 
             if(option==1){
-               
-                System.out.println("Please input Car name");
-                person.setTravelVehicle(inputsc.nextLine());
-                System.out.println("Please input Travel Location");
-                person.setLocation(inputsc.nextLine());
-                System.out.println("Please input Travel Distances");
-                travelDistance = inputsc.nextDouble();
-                gasConsumption = travelDistance/15.5;
-                if(gasConsumption > vehicle1.gas){
+                person.Travel();
+                gasConsumptions = (person.getTravelDistance() / 15.5);
+                Currentgas = vehicle1.gas - gasConsumptions;
+                vehicle1.setGas(Currentgas);
+                if(gasConsumptions > vehicle1.getGas()){
                     System.out.println("YOU DONT HAVE ENOUGH GAS");
                 }
                 else{
-                vehicle1.setGas(vehicle1.getGas() - gasConsumption );
-                System.out.println("Name: " + person.firstName +person.lastName + " traveled to: "+ person.getLocation() + " Using: " +person.getTravelVehicle() + " Current Gass Available: " + vehicle1.gas);
+                vehicle1.setGas(vehicle1.getGas() - gasConsumptions );
+                System.out.println("Name: " + person.firstName +person.lastName + " traveled to: "+ person.getLocation() + " Using: " + person.getTravelVehicle() + " Current Gass Available: " + vehicle1.gas);
                 }
 
-
-            }else if(option==2){
-               
-                System.out.println("Please input Motorcyle name");
-                person.setTravelVehicle(inputsc.nextLine());
-                System.out.println("Please input Travel Location");
-                person.setLocation(inputsc.nextLine());
-                System.out.println("Please input Travel Distances");
-                travelDistance = inputsc.nextDouble();
-               gasConsumption = travelDistance/15.5;
-               if(gasConsumption > vehicle2.gas){
-                System.out.println("YOU DONT HAVE ENOUGH GAS");
-              }
-              else{
-                vehicle2.setGas(vehicle2.getGas() - gasConsumption );
-                System.out.println("Name: " + person.firstName +person.lastName + " traveled to: "+ person.getLocation() + " Using: " +person.getTravelVehicle() + " Current Gass Available: " + vehicle2.gas);
-                 }
-        }
+            }
+        
             else {
                 System.out.println("Invalid input please input again!!");
 
